@@ -17,7 +17,7 @@ const readDir = async () => {
   const files = await fs.readdir(path_url)
   files.map(async (f,i)=>{
     if(path.extname(f) === ".jpg"){
-       await fs.rename( path_url + "/" + f,`${path_url}/quotes-${i}.jpg`)
+       await fs.rename( path_url + "/" + f,`${path_url}/quotes${i}.jpg`)
     }
   })
   
