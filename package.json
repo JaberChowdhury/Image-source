@@ -1,0 +1,25 @@
+{
+  "name": "database",
+  "version": "1.0.0",
+  "description": "storing images and other file for later uses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaberChowdhury/Image-source.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Mohammad Jaber Hossain Chowdhury",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JaberChowdhury/Image-source/issues"
+  },
+  "homepage": "https://github.com/JaberChowdhury/Image-source#readme",
+  "devDependencies": {
+    "prettier": "^3.1.1"
+  }
+}
