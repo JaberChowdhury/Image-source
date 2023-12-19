@@ -17,10 +17,17 @@ const make_json = async () => {
       url: prefix + file,
     });
   });
+
+  const smtobig = await files_array.sort((a, b) => {
+    const x = a.url.split(".")[2].split("/").reverse()[0];
+    const y = b.url.split(".")[2].split("/").reverse()[0];
+    return Number(x) - Number(y);
+  });
+
   await fs.writeFile(
     path_url + "/source.json",
     JSON.stringify({
-      source: files_array,
+      source: smtobig,
     }),
   );
 };
