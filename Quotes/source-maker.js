@@ -12,6 +12,7 @@ let files_array = [];
 
 const make_json = async () => {
   const files = await fs.readdir(path_url + "/images");
+  const texts = await fs.readFile(path_url + "quotes_text.json", "utf-8");
   await files.map((file) => {
     files_array.push({
       url: prefix + file,
@@ -24,10 +25,18 @@ const make_json = async () => {
     return Number(x) - Number(y);
   });
 
+  const final = await smtobig.map((u, i) => {
+    return {
+      id: crypto.randomUUID(),
+      url: u.url,
+      text: JSON.parse(texts).texts[i],
+    };
+  });
+
   await fs.writeFile(
     path_url + "/source.json",
     JSON.stringify({
-      source: smtobig,
+      source: final,
     }),
   );
 };
