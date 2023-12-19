@@ -17,7 +17,7 @@ const make_json = async () => {
       url: prefix + file,
     });
   });
-  fs.writeFile(
+  await fs.writeFile(
     path_url + "/source.json",
     JSON.stringify({
       source: files_array,
